@@ -1,0 +1,54 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/header.jpg'); /* Update the path if necessary */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust the height as needed */
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(233, 241, 251, 0.673); /* Subtle overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.header-content p {
+  font-size: 1.2em;
+  margin: 0 0 20px 0;
+  color: #555;
+}
+
+.get-started-button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.get-started-button:hover {
+  background-color: #0056b3;
+}

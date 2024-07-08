@@ -1,0 +1,140 @@
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.contact-header {
+  position: relative;
+  background-image: url('./assets/contact.jpg'); /* Ensure this path is correct */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust the height as needed */
+  width: 100%; /* Ensure it fills the width */
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(233, 241, 251, 0.673); /* Subtle overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.header-content p {
+  font-size: 1.2em;
+  margin: 0 0 20px 0;
+  color: #555;
+}
+
+.appointment-button {
+  background-color: #007bff;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.appointment-button:hover {
+  background-color: #0056b3;
+}
+
+.contact-form {
+  max-width: 50%;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 40px auto; /* Added margin to create space around the form */
+}
+
+.contact-form h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-form p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:invalid {
+  border-color: red;
+}
+
+.form-group input:valid {
+  border-color: green;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.swal-button {
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  font-size: 1em !important;
+  cursor: pointer !important;
+  font-family: 'Poppins', sans-serif !important;
+}

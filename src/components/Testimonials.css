@@ -1,0 +1,63 @@
+/* Testimonials.css */
+
+.testimonials {
+  padding: 50px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.stars {
+  color: #333; /* Change to the desired color */
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.card span {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #007bff;
+}
+
+.analysis-button {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.analysis-button:hover {
+  background-color: #0056b3;
+}
