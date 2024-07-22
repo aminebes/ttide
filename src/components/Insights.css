@@ -1,8 +1,6 @@
-/* Insights.css */
-
 .insights {
   padding: 50px;
-  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+  background-color: #007bff;
   color: #fff;
   text-align: center;
 }
@@ -15,7 +13,7 @@
 
 .insights p {
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .insight-cards {
@@ -24,10 +22,11 @@
   gap: 20px;
 }
 
-.insight-card {
+.card {
   background-color: #ffffff;
   color: #333;
   border-radius: 10px;
+  padding: 20px;
   width: 30%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -37,13 +36,8 @@
 .card-image {
   width: 100%;
   height: auto;
-  padding: 0;
-  border-radius: 10px 10px 0px 0px;
-  margin-bottom: 5px;
-}
-
-.insight-card-body {
-  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .card h3 {

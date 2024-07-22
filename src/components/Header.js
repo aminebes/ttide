@@ -4,7 +4,7 @@ import './Header.css';
 
 function Header() {
   return (
-    <header className="header" role="banner">
+    <header className="header">
       <div className="header-overlay">
         <div className="header-content">
           <h1>Discover our digital marketing services</h1>

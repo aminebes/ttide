@@ -22,12 +22,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1; /* Ensure the overlay is above the image */
 }
 
 .header-content {
   text-align: center;
-  z-index: 2; /* Ensure the text is above the overlay */
+  z-index: 1; /* Ensure the text is above the overlay */
 }
 
 .header-content h1 {
@@ -45,248 +44,30 @@
 
 .about-header-image {
   width: 100%;
-  height: 100%; /* Ensure the image covers the height */
-  object-fit: cover; /* This will make sure the image covers the container */
-  position: absolute; /* Ensure the image stays behind the overlay and content */
-  top: 0;
-  left: 0;
-}
-
-.about-cards {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 20%;
-  height: 350px;
-  margin: 10px;
-}
-
-.card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  font-size: 1.5em;
-  margin-top: 10px;
-  color: #333;
-}
-
-.card p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.card-button {
-  background-color: #007bff;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  border: none;
-  margin-top: 50px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.card-button:hover {
-  background-color: #0056b3;
-}
-
-.section {
-  padding: 40px;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.section-separator {
-  border-top: 0.5px solid #e0e0e0;
-  align-self: center;
-  width: 75%;
-  margin-top: 20px;
-}
-
-.maps-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.contact-form {
-  max-width: 50%;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  margin: 40px auto; /* Added margin to create space around the form */
-}
-
-.contact-form h2 {
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.contact-form p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.form-group label svg {
-  margin-right: 10px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: 'Poppins', sans-serif;
-}
-
-.form-group input:invalid {
-  border-color: red;
-}
-
-.form-group input:valid {
-  border-color: green;
-}
-
-.form-group textarea {
-  height: 100px;
-  resize: none;
-}
-
-.submit-button {
-  font-family: 'Poppins', sans-serif;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  margin-left: 315px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  align-self: center;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-.swal-button {
-  background-color: #007bff !important;
-  color: white !important;
-  border: none !important;
-  padding: 10px 20px !important;
-  border-radius: 5px !important;
-  font-size: 1em !important;
-  cursor: pointer !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.swal-button-cancel {
-  background-color: #dc3545 !important;
-  color: white !important;
-  border: none !important;
-  width: 100px !important;
-  padding: 10px 20px !important;
-  border-radius: 5px !important;
-  font-size: 1em !important;
-  cursor: pointer !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.our-story-section {
-  display: flex;
-  align-items: center;
-  padding: 80px;
-  background-color: #f8f9fa;
-}
-
-.story-content {
-  display: flex;
-  align-items: center;
-  padding: 40px;
-  justify-content: space-between;
-}
-
-.story-image {
-  width: 40%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.story-text {
-  width: 45%;
-}
-
-.story-text h2 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.story-text p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .journey-section {
   text-align: center;
   padding: 50px;
-  position: relative;
 }
 
 .journey-section h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .journey-section p {
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .journey-image {
-  width: 90%;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 30px;
 }
 
 .key-stats {
@@ -295,26 +76,17 @@
   padding: 50px;
   gap: 70px;
   background-color: #f8f9fa;
-  position: relative;
-  margin-bottom: 20px;
+  transform: translateX(50px);
 }
 
 .stat {
   text-align: center;
-  width: 300px;
-  background-color: white;
-  border: 1px solid #dddddd;
-  color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
+  width: auto;
 }
 
 .stat h3 {
   font-size: 2.5em;
   font-weight: bold;
-  color: #007bff;
 }
 
 .stat p {
@@ -327,234 +99,139 @@
 }
 
 .team-section h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .team-section p {
   font-size: 1.2em;
+  margin-bottom: 40px;
 }
 
 .team-members {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust to auto-fit for better responsiveness */
-  gap: 35px 0px; /* 20px gap between rows, 10px gap between columns */
-  justify-content: center;
-  align-items: start; /* Align items to the start */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: space-around;
 }
 
 .team-member {
-  border: 1px solid #dddddd;
   text-align: center;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  height: 400px;
-  width: 100%; /* Use 100% width to ensure consistency */
-  max-width: 350px; /* Ensures all members are the same size as the example */
-  margin: 0 auto; /* Center the card */
-}
-
-.team-member:hover {
-  transform: translateY(-10px);
-}
-
-.team-member-body {
-  padding: 10px;
 }
 
 .team-member img {
-  width: 100%;
-  height: 200px; /* Adjust height as needed to focus on the face */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  object-fit: cover; /* This ensures the image covers the area */
-  object-position: top; /* This ensures the top part of the image is shown, focusing on the face */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .team-member h3 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 .team-member p {
   font-size: 1em;
-  color: #555555;
-  margin-top: 0px;
+  color: #555;
 }
 
-.team-member .occupation {
-  font-size: 1em;
-  margin-top: 0px;
-  color: #555555;
-}
-
-.team-member .phrase {
-  font-size: 0.9em;
-  color: #777777;
-  margin-top: 0px;
-}
-
-/* Ensuring the last row is centered */
-.team-members::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0;
-}
-
-
-.stars {
-  margin-top: 0px;
-}
-
-.why-choose-us-section {
+.locations-section {
   text-align: center;
   padding: 50px;
   background-color: #f8f9fa;
-  position: relative;
-  overflow: hidden;
 }
 
-.why-choose-us-section h2 {
-  font-size: 2.5em;
+.locations-section h2 {
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333; /* Changed back to original text color */
 }
 
-.why-choose-us-section p.intro {
+.locations-section p {
   font-size: 1.2em;
-  color: #555;
-  margin-bottom: 40px; /* Added intro phrase styling */
+  margin-bottom: 40px;
 }
 
-.why-choose-us-content {
+.locations {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 40px;
 }
 
-.why-choose-us-item {
+.location {
+  text-align: center;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #dddddd;
-  flex: 1;
-  width: 350px;
-  height: 350px;
-  text-align: center;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%); /* Updated gradient to match theme */
-  color: #333; /* Changed back to original text color */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.why-choose-us-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.why-choose-us-icon {
-  margin-top: 10px;
-  font-size: 2.5em;
+.location h3 {
+  font-size: 1.5em;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
-.why-choose-us-item h3 {
-  margin-top: 10px;
-  font-size: 1.5em;
-  color: #333; /* Changed back to original text color */
-}
-
-.why-choose-us-item p {
-  font-size: 1.1em;
-  margin-top: 10px;
-  color: #555; /* Changed back to original text color */
+.location p {
+  font-size: 1em;
 }
 
 .experience-section {
   text-align: center;
   padding: 50px;
-  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+  background-color: #007bff;
   color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.experience-section::before,
-.experience-section::after {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.experience-section::before {
-  top: -50px;
-  left: -50px;
-}
-
-.experience-section::after {
-  bottom: -50px;
-  right: -50px;
 }
 
 .experience-section h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
-  z-index: 2;
-  position: relative;
 }
 
 .experience-section p {
   font-size: 1.2em;
   margin-bottom: 40px;
-  z-index: 2;
-  position: relative;
 }
 
 .experience-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
-  z-index: 2;
-  position: relative;
 }
 
-.start-button,
-.contact-us-button {
+.start-button {
+  background-color: white;
   font-family: 'Poppins', sans-serif;
-  color: white;
-  border: 2px solid white;
+  color: #007bff;
+  border: 2px solid #007bff;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: none;
-  z-index: 2;
-  position: relative;
 }
 
-.start-button:hover,
-.contact-us-button:hover {
+.start-button:hover {
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
+
+.contact-us-button {
+  font-family: 'Poppins', sans-serif;
   background-color: white;
   color: #007bff;
-  border-color: #007bff;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
 }
 
-
-.section-separator {
-  border-top: 0.5px solid #e0e0e0;
-  align-self: center;
-  width: 75%;
-  margin-top: 20px;
+.contact-us-button:hover {
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
 }
