@@ -1,19 +1,19 @@
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './Navbar.css';
 
 function NavbarFR() {
-  const toggleLanguage = () => {
-    const currentPath = window.location.pathname;
-    if (currentPath.includes('/fr')) {
-      const newPath = currentPath.replace('/fr', '');
-      window.location.replace(newPath);
-    } else {
-      window.location.replace(`${currentPath}/fr`);
-    }
+  const navigate = useNavigate();
+
+  const handleENClick = () => {
+    navigate("/");
+  };
+
+  const handleFRClick = () => {
+    navigate('/fr');
   };
 
   return (
@@ -31,9 +31,12 @@ function NavbarFR() {
         <li><Link to="/about-us/fr">À propos</Link></li>
       </ul>
       <div className="navbar-actions">
-        <button className="language-toggle" onClick={toggleLanguage}>
+        <button className="language-toggle" onClick={handleENClick}>
           <FontAwesomeIcon icon={faGlobe} className="language-icon" />
           EN
+        </button>
+        <button className="language-toggle" onClick={handleFRClick}>
+          FR
         </button>
         <Link to="/contact/fr">
           <button className="contact-button">Contactez-nous</button>
