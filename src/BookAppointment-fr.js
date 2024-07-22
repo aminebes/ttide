@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import './BookAppointment.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Footer from './components/Footer-fr';
+import NavbarFR from './components/Navbar-fr';
 
-function BookAppointment() {
+function BookAppointmentFR() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,12 +32,12 @@ function BookAppointment() {
 
     // Show confirmation popup
     Swal.fire({
-      title: 'Confirm Booking',
-      text: 'Are you sure you want to submit your booking details? Please verify the information before confirming.',
+      title: 'Confirmer la Réservation',
+      text: 'Êtes-vous sûr de vouloir soumettre les détails de votre réservation ? Veuillez vérifier les informations avant de confirmer.',
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: 'Book',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Réserver',
+      cancelButtonText: 'Annuler',
       customClass: {
         confirmButton: 'swal-button',
         cancelButton: 'swal-button-cancel',
@@ -46,8 +46,8 @@ function BookAppointment() {
       if (result.isConfirmed) {
         // Show success popup
         Swal.fire({
-          title: 'Success!',
-          text: 'Your appointment has been booked successfully.',
+          title: 'Succès !',
+          text: 'Votre rendez-vous a été réservé avec succès.',
           icon: 'success',
           confirmButtonText: 'OK',
           customClass: {
@@ -78,47 +78,47 @@ function BookAppointment() {
 
   return (
     <div className="appointment-page">
-      <Navbar />
+      <NavbarFR />
       <header className="appointment-header" role="banner">
-        <h1>Appointment Details</h1>
+        <h1>Détails du Rendez-vous</h1>
         <div className="separator"></div>
-        <p>Schedule a session with our digital marketing experts to boost your online presence.</p>
+        <p>Planifiez une session avec nos experts en marketing digital pour améliorer votre présence en ligne.</p>
       </header>
       <main className="appointment-content">
         <section className="appointment-form" aria-labelledby="appointment-form-heading">
           <div className="appointment-card">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name"><FontAwesomeIcon icon={faUser} /> Full Name</label>
+                <label htmlFor="name"><FontAwesomeIcon icon={faUser} /> Nom Complet</label>
                 <input
                   type="text"
                   id="name"
-                  placeholder="Full Name"
+                  placeholder="Nom Complet"
                   className="input-field"
                   required
                   value={formData.name}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Full Name"
+                  aria-label="Nom Complet"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Email Address</label>
+                <label htmlFor="email"><FontAwesomeIcon icon={faEnvelope} /> Adresse Email</label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="Email Address"
+                  placeholder="Adresse Email"
                   className="input-field"
                   required
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   value={formData.email}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Email Address"
+                  aria-label="Adresse Email"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="teamSize"><FontAwesomeIcon icon={faUsers} /> Team Size</label>
+                <label htmlFor="teamSize"><FontAwesomeIcon icon={faUsers} /> Taille de l'Équipe</label>
                 <select
                   id="teamSize"
                   className="input-field select-field"
@@ -126,16 +126,16 @@ function BookAppointment() {
                   value={formData.teamSize}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Select Team Size"
+                  aria-label="Sélectionner la Taille de l'Équipe"
                 >
-                  <option value="" disabled>Select Team Size</option>
+                  <option value="" disabled>Sélectionner la Taille de l'Équipe</option>
                   <option value="1-2">1-2</option>
                   <option value="3-5">3-5</option>
                   <option value="5+">5+</option>
                 </select>
               </div>
               <div className="form-group">
-                <label htmlFor="date"><FontAwesomeIcon icon={faCalendarAlt} /> Select Date</label>
+                <label htmlFor="date"><FontAwesomeIcon icon={faCalendarAlt} /> Sélectionner la Date</label>
                 <input
                   type="date"
                   id="date"
@@ -145,11 +145,11 @@ function BookAppointment() {
                   onChange={handleChange}
                   min={getCurrentDate()}
                   aria-required="true"
-                  aria-label="Select Date"
+                  aria-label="Sélectionner la Date"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="time"><FontAwesomeIcon icon={faClock} /> Select Time</label>
+                <label htmlFor="time"><FontAwesomeIcon icon={faClock} /> Sélectionner l'Heure</label>
                 <select
                   id="time"
                   className="input-field select-field"
@@ -157,9 +157,9 @@ function BookAppointment() {
                   value={formData.time}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Select Time"
+                  aria-label="Sélectionner l'Heure"
                 >
-                  <option value="" disabled>Select Time</option>
+                  <option value="" disabled>Sélectionner l'Heure</option>
                   <option value="9 AM">9 AM</option>
                   <option value="10 AM">10 AM</option>
                   <option value="11 AM">11 AM</option>
@@ -171,66 +171,66 @@ function BookAppointment() {
                   <option value="5 PM">5 PM</option>
                 </select>
               </div>
-              <button type="submit" className="confirm-button">Confirm</button>
+              <button type="submit" className="confirm-button">Confirmer</button>
             </form>
           </div>
         </section>
         <aside className="appointment-info" aria-labelledby="appointment-info-heading">
           <div className="info-box" aria-labelledby="why-book-heading">
-            <h3 id="why-book-heading">Why Book an Appointment?</h3>
+            <h3 id="why-book-heading">Pourquoi Réserver un Rendez-vous ?</h3>
             <ul>
-              <li>Personalized consultation with our experts</li>
-              <li>Get insights tailored to your business needs</li>
-              <li>Boost your digital presence</li>
-              <li>Exclusive tips and strategies</li>
+              <li>Consultation personnalisée avec nos experts</li>
+              <li>Obtenez des informations adaptées aux besoins de votre entreprise</li>
+              <li>Améliorez votre présence digitale</li>
+              <li>Conseils et stratégies exclusifs</li>
             </ul>
           </div>
           <div className="info-box" aria-labelledby="what-to-expect-heading">
-            <h3 id="what-to-expect-heading">What to Expect</h3>
+            <h3 id="what-to-expect-heading">À quoi s'attendre</h3>
             <ul>
-              <li>Detailed analysis of your current strategies</li>
-              <li>Customized plan of action</li>
-              <li>Interactive Q&A session</li>
-              <li>Follow-up support</li>
+              <li>Analyse détaillée de vos stratégies actuelles</li>
+              <li>Plan d'action personnalisé</li>
+              <li>Session de questions-réponses interactive</li>
+              <li>Support de suivi</li>
             </ul>
           </div>
         </aside>
       </main>
       <section className="additional-info" aria-labelledby="additional-info-heading">
         <div className="process-section" aria-labelledby="our-process-heading">
-          <h3 id="our-process-heading">Our Process</h3>
+          <h3 id="our-process-heading">Notre Processus</h3>
           <div className="process-timeline">
-            <div className="process-step" aria-label="Initial Consultation: Discuss your goals and challenges.">
+            <div className="process-step" aria-label="Consultation Initiale : Discutez de vos objectifs et défis.">
               <FontAwesomeIcon icon={faClipboardList} size="2x" style={{marginRight: 18}} />
-              <p>Initial Consultation: Discuss your goals and challenges.</p>
+              <p>Consultation Initiale : Discutez de vos objectifs et défis.</p>
             </div>
-            <div className="process-step" aria-label="Strategy Development: Create a customized plan.">
+            <div className="process-step" aria-label="Développement de Stratégie : Créez un plan personnalisé.">
               <FontAwesomeIcon icon={faChartLine} size="2x" style={{marginRight: 10}} />
-              <p>Strategy Development: Create a customized plan.</p>
+              <p>Développement de Stratégie : Créez un plan personnalisé.</p>
             </div>
-            <div className="process-step" aria-label="Implementation: Execute the strategy with our team.">
+            <div className="process-step" aria-label="Mise en Œuvre : Exécutez la stratégie avec notre équipe.">
               <FontAwesomeIcon icon={faCheckCircle} size="2x" style={{marginRight: 10}} />
-              <p>Implementation: Execute the strategy with our team.</p>
+              <p>Mise en Œuvre : Exécutez la stratégie avec notre équipe.</p>
             </div>
-            <div className="process-step" aria-label="Review and Adjust: Analyze results and make necessary adjustments.">
+            <div className="process-step" aria-label="Réviser et Ajuster : Analysez les résultats et apportez les ajustements nécessaires.">
               <FontAwesomeIcon icon={faSyncAlt} size="2x" style={{marginRight: 10}} />
-              <p>Review and Adjust: Analyze results and make necessary adjustments.</p>
+              <p>Réviser et Ajuster : Analysez les résultats et apportez les ajustements nécessaires.</p>
             </div>
           </div>
         </div>
         <div className="faq-section" aria-labelledby="faq-heading">
-          <h3 id="faq-heading">Frequently Asked Questions</h3>
+          <h3 id="faq-heading">Questions Fréquemment Posées</h3>
           <div className="faq" aria-labelledby="faq-question-1">
-            <h4 id="faq-question-1">How long is each consultation session?</h4>
-            <p>Each session typically lasts one hour, but this can vary based on your specific needs and questions.</p>
+            <h4 id="faq-question-1">Combien de temps dure chaque session de consultation ?</h4>
+            <p>Chaque session dure généralement une heure, mais cela peut varier en fonction de vos besoins spécifiques et de vos questions.</p>
           </div>
           <div className="faq" aria-labelledby="faq-question-2">
-            <h4 id="faq-question-2">What should I prepare for the consultation?</h4>
-            <p>Please come prepared with specific goals, questions, and any relevant data or reports.</p>
+            <h4 id="faq-question-2">Que dois-je préparer pour la consultation ?</h4>
+            <p>Veuillez venir préparé avec des objectifs spécifiques, des questions et toute donnée ou rapport pertinent.</p>
           </div>
           <div className="faq" aria-labelledby="faq-question-3">
-            <h4 id="faq-question-3">Is there any follow-up after the consultation?</h4>
-            <p>Yes, we provide follow-up support to ensure that the strategies discussed are effectively implemented.</p>
+            <h4 id="faq-question-3">Y a-t-il un suivi après la consultation ?</h4>
+            <p>Oui, nous offrons un support de suivi pour s'assurer que les stratégies discutées sont mises en œuvre efficacement.</p>
           </div>
         </div>
       </section>
@@ -239,4 +239,4 @@ function BookAppointment() {
   );
 }
 
-export default BookAppointment;
+export default BookAppointmentFR;

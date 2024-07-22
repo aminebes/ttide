@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-function Header() {
+function HeaderFR() {
   return (
     <header className="header" role="banner">
       <div className="header-overlay">
         <div className="header-content">
-          <h1>Discover our digital marketing services</h1>
-          <p>Explore what sets us apart</p>
-          <Link to="/services">
-            <button className="get-started-button">Get Started</button>
+          <h1>Découvrez nos services de marketing digital</h1>
+          <p>Découvrez ce qui nous distingue</p>
+          <Link to="/services/fr">
+            <button className="get-started-button">Commencer</button>
           </Link>
         </div>
       </div>
@@ -18,4 +18,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderFR;

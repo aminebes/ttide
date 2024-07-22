@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import FooterFR from './components/Footer-fr';
+import NavbarFR from './components/Navbar-fr';
 import './Contact.css';
 
-function Contact() {
+function ContactFR() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,8 +23,8 @@ function Contact() {
 
     if (!formData.message.trim()) {
       Swal.fire({
-        title: 'Error!',
-        text: 'Message cannot be empty.',
+        title: 'Erreur !',
+        text: 'Le message ne peut pas être vide.',
         icon: 'error',
         confirmButtonText: 'OK',
         customClass: {
@@ -35,12 +35,12 @@ function Contact() {
     }
 
     Swal.fire({
-      title: 'Confirm Submission',
-      text: 'Are you sure you want to submit your contact message? Please verify the details before confirming.',
+      title: 'Confirmer la Soumission',
+      text: 'Êtes-vous sûr de vouloir soumettre votre message de contact ? Veuillez vérifier les détails avant de confirmer.',
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: 'Submit',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Envoyer',
+      cancelButtonText: 'Annuler',
       customClass: {
         confirmButton: 'swal-button',
         cancelButton: 'swal-button-cancel',
@@ -48,8 +48,8 @@ function Contact() {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: 'Success!',
-          text: 'Your message has been sent successfully.',
+          title: 'Succès !',
+          text: 'Votre message a été envoyé avec succès.',
           icon: 'success',
           confirmButtonText: 'OK',
           customClass: {
@@ -85,51 +85,51 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <Navbar />
+      <NavbarFR />
       <header className="contact-header" role="banner">
         <div className="header-overlay">
           <div className="header-content">
-            <h1>Contact Us</h1>
-            <p>Discover our digital solutions. Reach out to us for queries.</p>
+            <h1>Contactez-nous</h1>
+            <p>Découvrez nos solutions numériques. Contactez-nous pour toute question.</p>
           </div>
         </div>
       </header>
 
       <main>
         <section className="contact-cards" aria-labelledby="contact-options-heading">
-          <h2 id="contact-options-heading" className="sr-only">Contact Options</h2>
+          <h2 id="contact-options-heading" className="sr-only">Options de Contact</h2>
           <div className="card" role="region" aria-labelledby="location-heading">
             <div className="card-header">
               <FontAwesomeIcon icon={faMapMarkerAlt} size="2x" color="#007bff" />
-              <h3 id="location-heading">Our Location</h3>
+              <h3 id="location-heading">Notre Emplacement</h3>
             </div>
-            <p>Explore our main office location and visit us. We are located in major cities across the globe to serve you better.</p>
-            <button className="card-button" onClick={() => scrollToSection('location-section')}>Check Location</button>
+            <p>Explorez l'emplacement de notre bureau principal et visitez-nous. Nous sommes situés dans les principales villes du monde pour mieux vous servir.</p>
+            <button className="card-button" onClick={() => scrollToSection('location-section')}>Voir l'Emplacement</button>
           </div>
           <div className="card" role="region" aria-labelledby="chat-heading">
             <div className="card-header">
               <FontAwesomeIcon icon={faComment} size="2x" color="#28a745" />
-              <h3 id="chat-heading">Chat with Us</h3>
+              <h3 id="chat-heading">Discutez avec Nous</h3>
             </div>
-            <p>Need assistance? Chat with our support team. We are available 24/7 to help you with your queries and concerns.</p>
-            <button className="card-button" onClick={() => scrollToSection('form-section')}>Start Chat</button>
+            <p>Besoin d'aide ? Discutez avec notre équipe de support. Nous sommes disponibles 24/7 pour vous aider avec vos questions et préoccupations.</p>
+            <button className="card-button" onClick={() => scrollToSection('form-section')}>Commencer la Discussion</button>
           </div>
           <div className="card" role="region" aria-labelledby="faq-heading">
             <div className="card-header">
               <FontAwesomeIcon icon={faQuestionCircle} size="2x" color="#ffc107" />
               <h3 id="faq-heading">FAQ</h3>
             </div>
-            <p>Have questions? Check our Frequently Asked Questions for support. Our team is ready to assist you with any inquiries.</p>
-            <button className="card-button" onClick={() => scrollToSection('faq-section')}>View FAQ</button>
+            <p>Des questions ? Consultez notre Foire Aux Questions pour obtenir de l'aide. Notre équipe est prête à répondre à toutes vos questions.</p>
+            <button className="card-button" onClick={() => scrollToSection('faq-section')}>Voir la FAQ</button>
           </div>
           <div className="card" role="region" aria-labelledby="appointment-heading">
             <div className="card-header">
               <FontAwesomeIcon icon={faCalendarAlt} size="2x" color="#dc3545" />
-              <h3 id="appointment-heading">Book an Appointment</h3>
+              <h3 id="appointment-heading">Rendez-vous</h3>
             </div>
-            <p>Schedule a meeting with our experts. We are here to help you with your specific needs and provide tailored solutions.</p>
-            <Link to="/book-appointment">
-              <button className="card-button">Book an Appointment</button>
+            <p>Planifiez une réunion avec nos experts. Nous sommes là pour vous aider avec vos besoins spécifiques et fournir des solutions personnalisées.</p>
+            <Link to="/book-appointment/fr">
+              <button className="card-button">Prendre un Rendez-vous</button>
             </Link>
           </div>
         </section>
@@ -137,11 +137,11 @@ function Contact() {
         <div className="section-separator"></div>
 
         <section id="location-section" className="section" aria-labelledby="location-section-heading">
-          <h2 id="location-section-heading" className="section-title">Our Location</h2>
-          <p>Find us easily on the map. Our main office is centrally located for your convenience.</p>
+          <h2 id="location-section-heading" className="section-title">Notre Emplacement</h2>
+          <p>Trouvez-nous facilement sur la carte. Notre bureau principal est situé de manière centrale pour votre commodité.</p>
           <div className="maps-container">
             <iframe
-              title="Our Location"
+              title="Notre Emplacement"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0159219400335!2d-122.40085068468154!3d37.78769657975681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064b3d6d1bd%3A0x3e7d9111a88c5184!2s717%20Market%20St%2C%20San%20Francisco%2C%20CA%2094103%2C%20USA!5e0!3m2!1sen!2sin!4v1628863989640!5m2!1sen!2sin"
               width="1200"
               height="700"
@@ -155,58 +155,58 @@ function Contact() {
         <div className="section-separator"></div>
 
         <section id="form-section" className="section" aria-labelledby="form-section-heading">
-          <h2 id="form-section-heading" className="section-title">Chat with Us</h2>
-          <p>We're here to help you with any inquiries or issues you might have. Our team is just a click away!</p>
+          <h2 id="form-section-heading" className="section-title">Discutez avec Nous</h2>
+          <p>Nous sommes là pour vous aider avec toutes les questions ou problèmes que vous pourriez avoir. Notre équipe est à un clic !</p>
           <div className="contact-form">
-            <h2>Get in Touch</h2>
-            <p>Contact our team for detailed information about our services and personalized support. Fill out the form below and we'll respond promptly to your inquiries.</p>
+            <h2>Contactez-nous</h2>
+            <p>Contactez notre équipe pour obtenir des informations détaillées sur nos services et un support personnalisé. Remplissez le formulaire ci-dessous et nous répondrons rapidement à vos demandes.</p>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">
-                  <FontAwesomeIcon icon={faUser} /> Full Name
+                  <FontAwesomeIcon icon={faUser} /> Nom Complet
                 </label>
                 <input
                   type="text"
                   id="name"
-                  placeholder="Full Name"
+                  placeholder="Nom Complet"
                   required
                   value={formData.name}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Full Name"
+                  aria-label="Nom Complet"
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="email">
-                  <FontAwesomeIcon icon={faEnvelope} /> Email Address
+                  <FontAwesomeIcon icon={faEnvelope} /> Adresse Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="Email Address"
+                  placeholder="Adresse Email"
                   required
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   value={formData.email}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Email Address"
+                  aria-label="Adresse Email"
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="message">
-                  <FontAwesomeIcon icon={faComment} /> Your Message
+                  <FontAwesomeIcon icon={faComment} /> Votre Message
                 </label>
                 <textarea
                   id="message"
-                  placeholder="Your Message"
+                  placeholder="Votre Message"
                   required
                   value={formData.message}
                   onChange={handleChange}
                   aria-required="true"
-                  aria-label="Your Message"
+                  aria-label="Votre Message"
                 ></textarea>
               </div>
-              <button type="submit" className="submit-button">Submit</button>
+              <button type="submit" className="submit-button">Soumettre</button>
             </form>
           </div>
         </section>
@@ -215,50 +215,50 @@ function Contact() {
 
         <section id="faq-section" className="section" aria-labelledby="faq-section-heading">
           <h2 id="faq-section-heading" className="section-title">FAQ</h2>
-          <p style={{ marginBottom: 30 }}>Find answers to common questions. If you can't find what you're looking for, feel free to reach out to us.</p>
+          <p style={{ marginBottom: 30 }}>Trouvez des réponses aux questions fréquentes. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à nous contacter.</p>
           <div className="faq-card" style={{border: "1px solid #ddd"}}>
             <div className="accordion" role="tablist">
               <div className={`accordion-item ${activeTabs.includes('faq1') ? 'active' : ''}`} id="faq1" role="tab" aria-expanded={activeTabs.includes('faq1')}>
                 <div className="accordion-header" style={{backgroundColor:"#007bff"}} onClick={() => handleTabClick('faq1')} role="button" aria-controls="faq1-content" tabIndex="0">
-                  <h3>What digital marketing services do you offer?</h3>
+                  <h3>Quels services de marketing digital proposez-vous ?</h3>
                   <FontAwesomeIcon icon={activeTabs.includes('faq1') ? faChevronUp : faChevronDown} />
                 </div>
                 {activeTabs.includes('faq1') && (
                   <div className="accordion-body" id="faq1-content" role="tabpanel" aria-labelledby="faq1">
-                    <p>We offer a wide range of digital marketing services including SEO, Social Media Marketing, Email Marketing, and more.</p>
+                    <p>Nous proposons une large gamme de services de marketing digital, y compris le SEO, le marketing sur les réseaux sociaux, le marketing par email, et plus encore.</p>
                   </div>
                 )}
               </div>
               <div className={`accordion-item ${activeTabs.includes('faq2') ? 'active' : ''}`} id="faq2" role="tab" aria-expanded={activeTabs.includes('faq2')}>
                 <div className="accordion-header" style={{backgroundColor:"#28a745"}} onClick={() => handleTabClick('faq2')} role="button" aria-controls="faq2-content" tabIndex="0">
-                  <h3>How can I measure the success of my marketing campaign?</h3>
+                  <h3>Comment puis-je mesurer le succès de ma campagne marketing ?</h3>
                   <FontAwesomeIcon icon={activeTabs.includes('faq2') ? faChevronUp : faChevronDown} />
                 </div>
                 {activeTabs.includes('faq2') && (
                   <div className="accordion-body" id="faq2-content" role="tabpanel" aria-labelledby="faq2">
-                    <p>Success can be measured using various metrics such as website traffic, conversion rates, engagement levels, and ROI.</p>
+                    <p>Le succès peut être mesuré à l'aide de divers indicateurs tels que le trafic sur le site web, les taux de conversion, les niveaux d'engagement, et le ROI.</p>
                   </div>
                 )}
               </div>
               <div className={`accordion-item ${activeTabs.includes('faq3') ? 'active' : ''}`} id="faq3" role="tab" aria-expanded={activeTabs.includes('faq3')}>
                 <div className="accordion-header" style={{backgroundColor:"#ffc107"}} onClick={() => handleTabClick('faq3')} role="button" aria-controls="faq3-content" tabIndex="0">
-                  <h3>What is the cost of your digital marketing services?</h3>
+                  <h3>Quel est le coût de vos services de marketing digital ?</h3>
                   <FontAwesomeIcon icon={activeTabs.includes('faq3') ? faChevronUp : faChevronDown} />
                 </div>
                 {activeTabs.includes('faq3') && (
                   <div className="accordion-body" id="faq3-content" role="tabpanel" aria-labelledby="faq3">
-                    <p>The cost varies depending on the scope and specifics of your campaign. Contact us for a detailed quote.</p>
+                    <p>Le coût varie en fonction de la portée et des spécificités de votre campagne. Contactez-nous pour un devis détaillé.</p>
                   </div>
                 )}
               </div>
               <div className={`accordion-item ${activeTabs.includes('faq4') ? 'active' : ''}`} id="faq4" role="tab" aria-expanded={activeTabs.includes('faq4')}>
                 <div className="accordion-header" style={{backgroundColor:"#dc3545"}} onClick={() => handleTabClick('faq4')} role="button" aria-controls="faq4-content" tabIndex="0">
-                  <h3>How long does it take to see results from digital marketing?</h3>
+                  <h3>Combien de temps faut-il pour voir les résultats du marketing digital ?</h3>
                   <FontAwesomeIcon icon={activeTabs.includes('faq4') ? faChevronUp : faChevronDown} />
                 </div>
                 {activeTabs.includes('faq4') && (
                   <div className="accordion-body" id="faq4-content" role="tabpanel" aria-labelledby="faq4">
-                    <p>Results can vary, but typically you can expect to see significant improvements within 3 to 6 months.</p>
+                    <p>Les résultats peuvent varier, mais généralement, vous pouvez vous attendre à voir des améliorations significatives dans un délai de 3 à 6 mois.</p>
                   </div>
                 )}
               </div>
@@ -267,9 +267,9 @@ function Contact() {
         </section>
       </main>
 
-      <Footer />
+      <FooterFR />
     </div>
   );
 }
 
-export default Contact;
+export default ContactFR;

@@ -11,17 +11,17 @@ import service6 from './assets/service6.jpg';
 import service7 from './assets/service7.jpg';
 import service8 from './assets/service8.jpg';
 import service9 from './assets/service9.jpg';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import FooterFR from './components/Footer-fr';
+import NavbarFR from './components/Navbar-fr';
 import './Services.css';
 
 const servicesData = [
   {
     id: 1,
-    title: 'Advanced Marketing Solutions',
+    title: 'Solutions de Marketing Avancées',
     rating: 4.5,
     reviews: 1394,
-    category: 'SEO Services',
+    category: 'Services SEO',
     location: 'New York',
     price: 150,
     image: service1,
@@ -31,7 +31,7 @@ const servicesData = [
     title: 'Premier MarketingHub',
     rating: 5.0,
     reviews: 1994,
-    category: 'Social Media Marketing',
+    category: 'Marketing Réseaux Sociaux',
     location: 'San Francisco',
     price: 175,
     image: service2,
@@ -41,7 +41,7 @@ const servicesData = [
     title: 'DigitalWave Innovations',
     rating: 4.8,
     reviews: 2139,
-    category: 'Email Marketing',
+    category: 'Marketing par Email',
     location: 'Los Angeles',
     price: 100,
     image: service3,
@@ -51,7 +51,7 @@ const servicesData = [
     title: 'ServicePro Excellence',
     rating: 4.7,
     reviews: 2563,
-    category: 'Content Marketing',
+    category: 'Marketing de Contenu',
     location: 'Toronto',
     price: 200,
     image: service4,
@@ -61,7 +61,7 @@ const servicesData = [
     title: 'CreativeBoost Strategies',
     rating: 4.6,
     reviews: 2065,
-    category: 'Consulting Services',
+    category: 'Services de Conseil',
     location: 'Chicago',
     price: 250,
     image: service5,
@@ -71,7 +71,7 @@ const servicesData = [
     title: 'SearchMaster Optimization',
     rating: 4.9,
     reviews: 1420,
-    category: 'SEO Services',
+    category: 'Services SEO',
     location: 'Chicago',
     price: 120,
     image: service6,
@@ -81,7 +81,7 @@ const servicesData = [
     title: 'SocialGenius Expertise',
     rating: 4.8,
     reviews: 1753,
-    category: 'Social Media Marketing',
+    category: 'Marketing Réseaux Sociaux',
     location: 'Toronto',
     price: 90,
     image: service7,
@@ -91,7 +91,7 @@ const servicesData = [
     title: 'EmailBlaster Solutions',
     rating: 4.7,
     reviews: 1632,
-    category: 'Email Marketing',
+    category: 'Marketing par Email',
     location: 'San Francisco',
     price: 220,
     image: service8,
@@ -101,7 +101,7 @@ const servicesData = [
     title: 'ContentKing Mastery',
     rating: 4.9,
     reviews: 1821,
-    category: 'Content Marketing',
+    category: 'Marketing de Contenu',
     location: 'Los Angeles',
     price: 110,
     image: service9,
@@ -111,20 +111,19 @@ const servicesData = [
     title: 'Consult Plus Services',
     rating: 4.5,
     reviews: 1400,
-    category: 'Consulting Services',
+    category: 'Services de Conseil',
     location: 'New York',
     price: 230,
     image: service10,
   }
 ];
 
-
-const Services = () => {
+const ServicesFR = () => {
   const [filteredServices, setFilteredServices] = useState(servicesData);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedPriceRanges, setSelectedPriceRanges] = useState([]);
-  const [sortOption, setSortOption] = useState('Most Popular');
+  const [sortOption, setSortOption] = useState('Les Plus Populaires');
 
   const filterServices = useCallback(() => {
     let filtered = servicesData;
@@ -152,13 +151,13 @@ const Services = () => {
       });
     }
 
-    if (sortOption === 'Most Popular') {
+    if (sortOption === 'Les Plus Populaires') {
       filtered = filtered.sort((a, b) => b.reviews - a.reviews);
-    } else if (sortOption === 'Highest Rated') {
+    } else if (sortOption === 'Les Mieux Notés') {
       filtered = filtered.sort((a, b) => b.rating - a.rating);
-    } else if (sortOption === 'Price: Low to High') {
+    } else if (sortOption === 'Prix: Du Plus Bas Au Plus Élevé') {
       filtered = filtered.sort((a, b) => a.price - b.price);
-    } else if (sortOption === 'Price: High to Low') {
+    } else if (sortOption === 'Prix: Du Plus Élevé Au Plus Bas') {
       filtered = filtered.sort((a, b) => b.price - a.price);
     }
 
@@ -201,7 +200,7 @@ const Services = () => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
     return (
-      <span className="star-rating" aria-label={`Rating: ${rating} out of 5`}>
+      <span className="star-rating" aria-label={`Évaluation : ${rating} sur 5`}>
         {[...Array(fullStars)].map((_, index) => (
           <FontAwesomeIcon key={index} icon={faStar} />
         ))}
@@ -212,63 +211,63 @@ const Services = () => {
 
   return (
     <div className="services-page">
-      <Navbar />
+      <NavbarFR />
       <header className="services-header">
-        <h1>Top Services</h1>
-        <p>Explore our top digital marketing services</p>
+        <h1>Nos Meilleurs Services</h1>
+        <p>Explorez nos meilleurs services de marketing digital</p>
       </header>
       <main className="services-content">
-        <aside className="filters" aria-label="Filters for services">
-          <h3>Service Categories</h3>
-          <div className="button-group" role="group" aria-label="Service categories">
+        <aside className="filters" aria-label="Filtres pour les services">
+          <h3>Catégories de Services</h3>
+          <div className="button-group" role="group" aria-label="Catégories de services">
             <button
               className={!selectedCategories.length ? 'selected' : ''}
               onClick={() => setSelectedCategories([])}
               aria-pressed={!selectedCategories.length}
             >
-              <FontAwesomeIcon icon={faSearch} /> All
+              <FontAwesomeIcon icon={faSearch} /> Tous
             </button>
             <button
-              className={selectedCategories.includes('SEO Services') ? 'selected' : ''}
-              onClick={() => handleCategoryChange('SEO Services')}
-              aria-pressed={selectedCategories.includes('SEO Services')}
+              className={selectedCategories.includes('Services SEO') ? 'selected' : ''}
+              onClick={() => handleCategoryChange('Services SEO')}
+              aria-pressed={selectedCategories.includes('Services SEO')}
             >
-              <FontAwesomeIcon icon={faSearch} /> SEO Services
+              <FontAwesomeIcon icon={faSearch} /> Services SEO
             </button>
             <button
-              className={selectedCategories.includes('Social Media Marketing') ? 'selected' : ''}
-              onClick={() => handleCategoryChange('Social Media Marketing')}
-              aria-pressed={selectedCategories.includes('Social Media Marketing')}
+              className={selectedCategories.includes('Marketing Réseaux Sociaux') ? 'selected' : ''}
+              onClick={() => handleCategoryChange('Marketing Réseaux Sociaux')}
+              aria-pressed={selectedCategories.includes('Marketing Réseaux Sociaux')}
             >
-              <FontAwesomeIcon icon={faBullhorn} /> Social Media Marketing
+              <FontAwesomeIcon icon={faBullhorn} /> Marketing Réseaux Sociaux
             </button>
             <button
-              className={selectedCategories.includes('Email Marketing') ? 'selected' : ''}
-              onClick={() => handleCategoryChange('Email Marketing')}
-              aria-pressed={selectedCategories.includes('Email Marketing')}
+              className={selectedCategories.includes('Marketing par Email') ? 'selected' : ''}
+              onClick={() => handleCategoryChange('Marketing par Email')}
+              aria-pressed={selectedCategories.includes('Marketing par Email')}
             >
-              <FontAwesomeIcon icon={faEnvelope} /> Email Marketing
+              <FontAwesomeIcon icon={faEnvelope} /> Marketing par Email
             </button>
             <button
-              className={selectedCategories.includes('Content Marketing') ? 'selected' : ''}
-              onClick={() => handleCategoryChange('Content Marketing')}
-              aria-pressed={selectedCategories.includes('Content Marketing')}
+              className={selectedCategories.includes('Marketing de Contenu') ? 'selected' : ''}
+              onClick={() => handleCategoryChange('Marketing de Contenu')}
+              aria-pressed={selectedCategories.includes('Marketing de Contenu')}
             >
-              <FontAwesomeIcon icon={faCommentsDollar} /> Content Marketing
+              <FontAwesomeIcon icon={faCommentsDollar} /> Marketing de Contenu
             </button>
             <button
-              className={selectedCategories.includes('Consulting Services') ? 'selected' : ''}
-              onClick={() => handleCategoryChange('Consulting Services')}
-              aria-pressed={selectedCategories.includes('Consulting Services')}
+              className={selectedCategories.includes('Services de Conseil') ? 'selected' : ''}
+              onClick={() => handleCategoryChange('Services de Conseil')}
+              aria-pressed={selectedCategories.includes('Services de Conseil')}
             >
-              <FontAwesomeIcon icon={faChartLine} /> Consulting Services
+              <FontAwesomeIcon icon={faChartLine} /> Services de Conseil
             </button>
           </div>
 
-          <h3>Location</h3>
-          <label htmlFor="location-select" className="sr-only">Location</label>
+          <h3>Localisation</h3>
+          <label htmlFor="location-select" className="sr-only">Localisation</label>
           <select id="location-select" className="select-location" onChange={handleLocationChange}>
-            <option value="">Select Location</option>
+            <option value="">Sélectionner la Localisation</option>
             <option value="New York">New York</option>
             <option value="San Francisco">San Francisco</option>
             <option value="Los Angeles">Los Angeles</option>
@@ -276,29 +275,29 @@ const Services = () => {
             <option value="Chicago">Chicago</option>
           </select>
 
-          <h3>Price Range</h3>
+          <h3>Gamme de Prix</h3>
           <div role="group" aria-labelledby="price-range-group">
-            <label className="price-range-label" aria-label="$50-$100 price range">
+            <label className="price-range-label" aria-label="Gamme de prix $50-$100">
               <input type="checkbox" value="$50-$100" onChange={() => handlePriceChange('$50-$100')} /> $50-$100
             </label>
-            <label className="price-range-label" aria-label="$100-$200 price range">
+            <label className="price-range-label" aria-label="Gamme de prix $100-$200">
               <input type="checkbox" value="$100-$200" onChange={() => handlePriceChange('$100-$200')} /> $100-$200
             </label>
-            <label className="price-range-label" aria-label="$200+ price range">
+            <label className="price-range-label" aria-label="Gamme de prix $200+">
               <input type="checkbox" value="$200+" onChange={() => handlePriceChange('$200+')} /> $200+
             </label>
           </div>
         </aside>
-        <section className="services-list-container" aria-label="List of services">
+        <section className="services-list-container" aria-label="Liste des services">
           <div className="sort-results">
-            <p>{`1-10 of ${filteredServices.length} results`}</p>
+            <p>{`1-10 sur ${filteredServices.length} résultats`}</p>
             <div className="sort-options">
-              <label htmlFor="sort-by">Sort by</label>
-              <select id="sort-by" onChange={handleSortChange} aria-label="Sort by">
-                <option value="Most Popular">Most Popular</option>
-                <option value="Highest Rated">Highest Rated</option>
-                <option value="Price: Low to High">Price: Low to High</option>
-                <option value="Price: High to Low">Price: High to Low</option>
+              <label htmlFor="sort-by">Trier par</label>
+              <select id="sort-by" onChange={handleSortChange} aria-label="Trier par">
+                <option value="Les Plus Populaires">Les Plus Populaires</option>
+                <option value="Les Mieux Notés">Les Mieux Notés</option>
+                <option value="Prix: Du Plus Bas Au Plus Élevé">Prix: Du Plus Bas Au Plus Élevé</option>
+                <option value="Prix: Du Plus Élevé Au Plus Bas">Prix: Du Plus Élevé Au Plus Bas</option>
               </select>
             </div>
           </div>
@@ -317,7 +316,7 @@ const Services = () => {
                   <p className="service-rating" style={{ fontSize: '1.1rem', color: 'gold', margin: '5px 0' }}>
                     {renderStars(service.rating)}
                   </p>
-                  <p className="service-rating" style={{ fontSize: '0.6rem', color: '#333', margin: '0 0' }}>{service.reviews} reviews
+                  <p className="service-rating" style={{ fontSize: '0.6rem', color: '#333', margin: '0 0' }}>{service.reviews} avis
                   </p>
                 </div>
               </article>
@@ -325,9 +324,9 @@ const Services = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <FooterFR />
     </div>
   );
 };
 
-export default Services;
+export default ServicesFR;

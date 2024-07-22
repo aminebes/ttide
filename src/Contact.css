@@ -12,6 +12,9 @@
   background-position: center;
   height: 400px; /* Adjust the height as needed */
   width: 100%; /* Ensure it fills the width */
+  overflow: hidden;
+  max-width: 100%; /* Ensure it does not overflow the container */
+  box-sizing: border-box;
 }
 
 .header-overlay {
@@ -41,20 +44,81 @@
   color: #555;
 }
 
-.appointment-button {
+.contact-cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 20%;
+  height: 350px;
+  margin: 10px;
+  border: 1px solid #dddddd;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.card-button {
   background-color: #007bff;
   font-family: 'Poppins', sans-serif;
   color: #fff;
   border: none;
+  margin-top: 50px;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1em;
   cursor: pointer;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.section-separator {
+  border-top: 0.5px solid #e0e0e0;
+  align-self: center;
+  width: 75%;
   margin-top: 20px;
 }
 
-.appointment-button:hover {
-  background-color: #0056b3;
+.maps-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 .contact-form {
@@ -65,6 +129,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
   margin: 40px auto; /* Added margin to create space around the form */
+  border: 1px solid #dddddd;
 }
 
 .contact-form h2 {
@@ -85,9 +150,14 @@
 }
 
 .form-group label {
-  display: block;
+  display: flex;
+  align-items: center;
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+.form-group label svg {
+  margin-right: 10px;
 }
 
 .form-group input,
@@ -118,10 +188,12 @@
   background-color: #007bff;
   color: #fff;
   border: none;
+  margin-left: 315px;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1em;
   cursor: pointer;
+  align-self: center;
 }
 
 .submit-button:hover {
@@ -132,6 +204,81 @@
   background-color: #007bff !important;
   color: white !important;
   border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  font-size: 1em !important;
+  cursor: pointer !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+.accordion {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: #f9f9f9; /* Changed to a light grey */
+  border: 1px solid #ccc; /* Changed to a lighter grey */
+  border-radius: 8px; /* Slightly more rounded corners */
+  margin-bottom: 12px; /* Slightly increased margin */
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-header {
+  padding: 5px 10px; /* Increased padding */
+  font-size: 1.1em; /* Slightly increased font size */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  align-items: left; /* Changed to center */
+  color: white; /* White text */
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+}
+
+.accordion-body {
+  text-align: left;
+  padding: 20px; /* Increased padding */
+  border-top: 1px solid #ccc; /* Changed to a lighter grey */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #fff; /* White background */
+  border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+.accordion-item.active .accordion-body {
+  max-height: 500px;
+}
+
+.faq-card {
+  background-color: #f7f9fc; /* Very light grey */
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly larger shadow */
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px; /* Increased bottom margin */
+}
+
+
+.swal-button {
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  font-size: 1em !important;
+  cursor: pointer !important;
+  width: 100px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.swal-button-cancel {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border: none !important;
+  width: 100px !important;
   padding: 10px 20px !important;
   border-radius: 5px !important;
   font-size: 1em !important;

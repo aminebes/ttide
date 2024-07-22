@@ -7,60 +7,60 @@ import reviewer2 from '../assets/member2.jpg';
 import reviewer3 from '../assets/member3.jpg';
 import './Testimonials.css';
 
-function Testimonials() {
+function TestimonialsFR() {
   return (
     <section className="testimonials" aria-labelledby="testimonials-heading">
-      <h2 id="testimonials-heading">Client Testimonials</h2>
-      <p className="subtitle">Hear from our satisfied clients about their experiences with our services.</p>
+      <h2 id="testimonials-heading">Témoignages des clients</h2>
+      <p className="subtitle">Écoutez nos clients satisfaits parler de leurs expériences avec nos services.</p>
       <div className="testimonial-cards">
-        <div className="test-card" aria-label="Testimonial from Marketing Pro">
-          <div className="stars" aria-label="5 out of 5 stars">
+        <div className="test-card" aria-label="Témoignage de Marketing Pro">
+          <div className="stars" aria-label="5 étoiles sur 5">
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
           </div>
-          <p>Our agency has been a game-changer for me. Highly recommend!</p>
+          <p>Notre agence a été un changeur de jeu pour moi. Je recommande vivement !</p>
           <div className="reviewer">
-            <img src={reviewer1} alt="Reviewer Marketing Pro" />
+            <img src={reviewer1} alt="Critique Marketing Pro" />
             <span>Marketing Pro</span>
           </div>
         </div>
-        <div className="test-card" aria-label="Testimonial from Digital Guru">
-          <div className="stars" aria-label="5 out of 5 stars">
+        <div className="test-card" aria-label="Témoignage de Digital Guru">
+          <div className="stars" aria-label="5 étoiles sur 5">
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
           </div>
-          <p>An exceptional experience with TrendTide. Top-notch service!</p>
+          <p>Une expérience exceptionnelle avec TrendTide. Service de premier ordre !</p>
           <div className="reviewer">
-            <img src={reviewer2} alt="Reviewer Digital Guru" />
+            <img src={reviewer2} alt="Critique Digital Guru" />
             <span>Digital Guru</span>
           </div>
         </div>
-        <div className="test-card" aria-label="Testimonial from Marketing Maven">
-          <div className="stars" aria-label="5 out of 5 stars">
+        <div className="test-card" aria-label="Témoignage de Marketing Maven">
+          <div className="stars" aria-label="5 étoiles sur 5">
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
           </div>
-          <p>Once you engage with TrendTide, you won’t look back. Exceptional service!</p>
+          <p>Une fois que vous vous engagez avec TrendTide, vous ne regarderez plus en arrière. Exceptionnel !</p>
           <div className="reviewer">
-            <img src={reviewer3} alt="Reviewer Marketing Maven" />
+            <img src={reviewer3} alt="Critique Marketing Maven" />
             <span>Marketing Maven</span>
           </div>
         </div>
       </div>
-      <Link to="/analysis">
-        <button className="analysis-button">See our clients results</button>
+      <Link to="/analysis/fr">
+        <button className="analysis-button">Voir les résultats de nos clients</button>
       </Link>
     </section>
   );
 }
 
-export default Testimonials;
+export default TestimonialsFR;

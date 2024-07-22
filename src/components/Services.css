@@ -1,33 +1,72 @@
-.services {
-    padding: 50px;
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .services h2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .services p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-  }
-  
-  .get-demo-button {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
-    color: #007bff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-  }
-  
-  .get-demo-button:hover {
-    background-color: #e9f1fb;
-  }
-  
+.experience-section {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-section::before,
+.experience-section::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.experience-section::before {
+  top: -50px;
+  left: -50px;
+}
+
+.experience-section::after {
+  bottom: -50px;
+  right: -50px;
+}
+
+.experience-section h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.experience-section p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+.experience-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.get-demo-button {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  position: relative;
+}
+
+
+.get-demo-button:hover {
+  background-color: white;
+  color: #007bff;
+  border-color: #007bff;
+}
