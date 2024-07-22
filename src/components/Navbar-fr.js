@@ -5,15 +5,9 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import './Navbar.css';
 
-function Navbar() {
+function NavbarFR() {
   const toggleLanguage = () => {
-    let currentPath = window.location.pathname;
-
-    // Remove trailing slash if it exists
-    if (currentPath.endsWith('/')) {
-      currentPath = currentPath.slice(0, -1);
-    }
-
+    const currentPath = window.location.pathname;
     if (currentPath.includes('/fr')) {
       const newPath = currentPath.replace('/fr', '');
       window.location.replace(newPath);
@@ -23,30 +17,30 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar" aria-label="Main Navigation">
+    <nav className="navbar" aria-label="Navigation principale">
       <div className="navbar-brand">
-        <Link to="/">
-          <img src={logo} alt="TrendTide Logo" className="navbar-logo" />
+        <Link to="/fr">
+          <img src={logo} alt="Logo TrendTide" className="navbar-logo" />
         </Link>
-        <Link to="/" className="brand-name">TrendTide</Link>
+        <Link to="/fr" className="brand-name">TrendTide</Link>
       </div>
       <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/services">Services</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/about-us">About us</Link></li>
+        <li><Link to="/fr">Accueil</Link></li>
+        <li><Link to="/services/fr">Services</Link></li>
+        <li><Link to="/blog/fr">Blog</Link></li>
+        <li><Link to="/about-us/fr">À propos</Link></li>
       </ul>
       <div className="navbar-actions">
         <button className="language-toggle" onClick={toggleLanguage}>
           <FontAwesomeIcon icon={faGlobe} className="language-icon" />
-          FR
+          EN
         </button>
-        <Link to="/contact">
-          <button className="contact-button">Contact us</button>
+        <Link to="/contact/fr">
+          <button className="contact-button">Contactez-nous</button>
         </Link>
       </div>
     </nav>
   );
 }
 
-export default Navbar;
+export default NavbarFR;

@@ -10,8 +10,8 @@ import {
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import './Analysis.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Footer from './components/Footer-fr';
+import Navbar from './components/Navbar-fr';
 
 ChartJS.register(
   CategoryScale,
@@ -22,21 +22,21 @@ ChartJS.register(
   Legend
 );
 
-function Analysis() {
+function AnalysisFR() {
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May'],
+    labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
     datasets: [
       {
-        label: 'Conversion Rate',
+        label: 'Taux de Conversion',
         data: [10, 12, 8, 15, 14],
         backgroundColor: 'rgba(75, 192, 192, 0.6)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1,
       },
       {
-        label: 'Clicks',
+        label: 'Clics',
         data: [1200, 1500, 1100, 1800, 1600],
-        backgroundColor: 'rgba(255, 99, 132, 0.6)', // Red color
+        backgroundColor: 'rgba(255, 99, 132, 0.6)', // Couleur rouge
         borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
       },
@@ -62,23 +62,23 @@ function Analysis() {
     <div className="analysis-page">
       <Navbar />
       <header className="appointment-header">
-        <h1>Client Results</h1>
+        <h1>Résultats des Clients</h1>
         <div className="separator"></div>
-        <p>Discover the exceptional results our clients have achieved using our digital marketing strategies.</p>
+        <p>Découvrez les résultats exceptionnels que nos clients ont obtenus grâce à nos stratégies de marketing digital.</p>
       </header>
       <main className="analysis-content">
         <section className="result-card">
-          <div className="chart" role="img" aria-label="Performance Chart showing Conversion Rate, Clicks, and Impressions from January to May">
+          <div className="chart" role="img" aria-label="Graphique de performance montrant le taux de conversion, les clics et les impressions de janvier à mai">
             <Bar data={data} options={options} />
           </div>
           <section className="summary">
-            <h3>Results Summary</h3>
-            <p>Detailed analysis of key metrics and performance indicators.</p>
+            <h3>Résumé des Résultats</h3>
+            <p>Analyse détaillée des principaux indicateurs de performance.</p>
             <ul>
-              <li>Conversion Rate: 12%</li>
-              <li>Clicks: 1,200</li>
-              <li>Impressions: 10,000</li>
-              <li>Cost per Click (CPC): $0.50</li>
+              <li>Taux de Conversion : 12%</li>
+              <li>Clics : 1200</li>
+              <li>Impressions : 10 000</li>
+              <li>Coût par Clic (CPC) : 0,50 $</li>
             </ul>
           </section>
         </section>
@@ -88,4 +88,4 @@ function Analysis() {
   );
 }
 
-export default Analysis;
+export default AnalysisFR;

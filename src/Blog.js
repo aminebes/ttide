@@ -1,4 +1,6 @@
-import React from 'react';
+import { faCode, faLightbulb, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import post1 from './assets/post1.jpg';
 import post2 from './assets/post2.jpg';
@@ -9,82 +11,137 @@ import post6 from './assets/post6.jpg';
 import post7 from './assets/post7.jpg';
 import post8 from './assets/post8.jpg';
 import post9 from './assets/post9.jpg';
-import reachout from './assets/reachout.jpg';
 import './Blog.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
+const categories = [
+  {
+    title: "Digital Marketing Strategies",
+    description: "Explore various strategies to boost your digital marketing efforts...",
+    posts: [
+      { title: "Exploring Digital Marketing Strategies", image: post1, description: "Embark on a journey through the dynamic world of digital marketing as we explore the latest trends shaping...", fullDescription: "Embark on a journey through the dynamic world of digital marketing as we explore the latest trends shaping the industry." },
+      { title: "Digital Marketing Trends for 2024 and Beyond", image: post2, description: "Dive into the art of digital storytelling, where every post conveys a compelling message and captures the...", fullDescription: "Dive into the art of digital storytelling, where every post conveys a compelling message and captures the audience's attention effectively." },
+      { title: "Enhancing User Engagement in Digital Marketing", image: post3, description: "In a world driven by online presence, uncover the strategies and principles that make digital marketing not just...", fullDescription: "In a world driven by online presence, uncover the strategies and principles that make digital marketing not just effective but impactful." }
+    ]
+  },
+  {
+    title: "Web Development",
+    description: "Learn about the latest trends and best practices in web development...",
+    posts: [
+      { title: "The Evolution of Web Development", image: post4, description: "Discover how web development has transformed over the years...", fullDescription: "Discover how web development has transformed over the years and what the future holds." },
+      { title: "Building Accessible and User-Friendly Websites", image: post5, description: "Learn how to make your websites accessible to all users...", fullDescription: "Learn how to make your websites accessible to all users, including those with disabilities." },
+      { title: "Securing Your Web Applications Against Threats", image: post6, description: "Understand the importance of web security and how to protect...", fullDescription: "Understand the importance of web security and how to protect your applications from threats." }
+    ]
+  },
+  {
+    title: "Inclusive and Secure Design",
+    description: "Understand the importance of inclusive design and cybersecurity...",
+    posts: [
+      { title: "Building Accessible and Secure Websites", image: post7, description: "Creating accessible websites is crucial in today's world. Ensuring that your site is usable by everyone, including those with disabilities, and protecting user...", fullDescription: "Creating accessible websites is crucial in today's world. Ensuring that your site is usable by everyone, including those with disabilities, and protecting user data with strong security measures." },
+      { title: "Inclusive Design for Diverse and Global User Bases", image: post8, description: "Explore the significance of inclusive design. From accessibility features to user-friendly interfaces, learn how inclusive design can ensure a positive experience...", fullDescription: "Explore the significance of inclusive design. From accessibility features to user-friendly interfaces, learn how inclusive design can ensure a positive experience for all users, regardless of their abilities." },
+      { title: "Ensuring Cyber Security in the Digital Age", image: post9, description: "In a digital era, security is crucial. Explore the strategies for securing digital assets and user data. From encryption to cybersecurity measures, learn how to protect...", fullDescription: "In a digital era, security is crucial. Explore the strategies for securing digital assets and user data. From encryption to cybersecurity measures, learn how to protect your digital presence from threats." }
+    ]
+  }
+];
+
 function Blog() {
+  const [expandedPosts, setExpandedPosts] = useState({});
+
+  const toggleReadMore = (categoryIndex, postIndex) => {
+    const key = `${categoryIndex}-${postIndex}`;
+    setExpandedPosts(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="blog-page">
       <Navbar />
-      <div className="blog-header">
+      <header className="blog-header" role="banner">
         <div className="header-overlay">
           <div className="header-content">
-            <h1 className="blog-title" style={{fontSize:'3rem'}}>Blog</h1>
+            <h1 className="blog-title" style={{ fontSize: '3rem' }}>Blog</h1>
             <p style={{ fontSize: '1.2rem', color: '#333' }}>Stay updated with the latest insights and trends in digital marketing</p>
           </div>
         </div>
-      </div>
-      <div className="blog-content">
-        <div className="blog-posts">
-          <div className="blog-post">
-            <img src={post1} alt="Post 1" className="post-image" />
-            <h2>Exploring Digital Marketing Strategies</h2>
-            <p>Embark on a journey through the dynamic world of digital marketing as we explore the latest trends shaping the industry...</p>
+      </header>
+      
+      <section className="blog-cards" aria-label="Blog Categories">
+        <div className="card" onClick={() => scrollToSection('section-digital-marketing-strategies')} aria-label="Digital Marketing Strategies">
+          <div className="card-header">
+            <FontAwesomeIcon icon={faLightbulb} size="2x" color="#007bff" />
+            <h3>Digital Marketing</h3>
           </div>
-          <div className="blog-post">
-            <img src={post2} alt="Post 2" className="post-image" />
-            <h2>Digital Marketing Trends for 2024</h2>
-            <p>Dive into the art of digital storytelling, where every post conveys a message...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post3} alt="Post 3" className="post-image" />
-            <h2>Enhancing User Engagement in Digital Marketing</h2>
-            <p>In a world driven by online presence, uncover the strategies and principles that make digital marketing not just effective but impactful...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post4} alt="Post 4" className="post-image" />
-            <h2>Maximizing E-Commerce through Digital Design</h2>
-            <p>Explore the fusion of design and e-commerce, delving into how user-centric design choices can drive conversions and enhance user experience...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post5} alt="Post 5" className="post-image" />
-            <h2>Creating Responsive Websites Easily</h2>
-            <p>In a world of diverse devices, responsive web design is essential. Learn why adaptability matters and how embracing this design approach can ensure a seamless user experience across all devices...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post6} alt="Post 6" className="post-image" />
-            <h2>Demystifying UI and UX Design</h2>
-            <p>Delve into the harmony between User Interface (UI) and User Experience (UX) design. Discover how these elements collaborate to create websites and applications that not only look great but also provide a seamless experience...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post7} alt="Post 7" className="post-image" />
-            <h2>Inclusive Design for Diverse Users</h2>
-            <p>Explore the significance of inclusive design. From accessibility features to user-friendly interfaces, learn how inclusive design can ensure a positive experience for all users, regardless of their abilities...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post8} alt="Post 8" className="post-image" />
-            <h2>Web Development Lifecycle Explained</h2>
-            <p>Gain insights into the stages of web development. From planning to deployment, understand the collaborative process involved in creating websites and applications...</p>
-          </div>
-          <div className="blog-post">
-            <img src={post9} alt="Post 9" className="post-image" />
-            <h2>Ensuring Cyber Security in the Digital Age</h2>
-            <p>In a digital era, security is crucial. Explore the strategies for securing digital assets and user data. From encryption to cybersecurity measures, learn how to protect your digital presence from potential threats...</p>
-          </div>
+          <p>Explore the latest strategies and trends in digital marketing. Learn how to effectively engage your audience and boost your online presence...</p>
+          <button className="card-button">Learn More</button>
         </div>
-        <button className="explore-button">Explore</button>
-        <div className="help-section">
-          <img src={reachout} alt="Need Help with Digital Marketing?" className="help-section-image" />
-          <div className="overlay">
-            <h2>Need Help with Digital Marketing?</h2>
-            <Link to="/contact">
-              <button className="reach-out-button">Reach Out</button>
-            </Link>
+        <div className="card" onClick={() => scrollToSection('section-web-development')} aria-label="Web Development">
+          <div className="card-header">
+            <FontAwesomeIcon icon={faCode} size="2x" color="#28a745" />
+            <h3>Web Development</h3>
           </div>
+          <p>Learn about the latest trends and best practices in web development. Discover how to build responsive and user-friendly websites...</p>
+          <button className="card-button">Learn More</button>
         </div>
-      </div>
+        <div className="card" onClick={() => scrollToSection('section-inclusive-and-secure-design')} aria-label="Inclusive and Secure Design">
+          <div className="card-header">
+            <FontAwesomeIcon icon={faShieldAlt} size="2x" color="#ffc107" />
+            <h3>Inclusive Design</h3>
+          </div>
+          <p>Understand the principles of inclusive design and cybersecurity. Ensure your online presence is safe and accessible to all users...</p>
+          <button className="card-button">Learn More</button>
+        </div>
+      </section>
+
+      <main className="blog-content">
+        {categories.map((category, categoryIndex) => (
+          <section key={categoryIndex} id={`section-${category.title.toLowerCase().replace(/\s+/g, '-')}`} className="blog-category" aria-labelledby={`category-title-${categoryIndex}`}>
+            <div className="paragraph-separator"></div>
+            <h2 id={`category-title-${categoryIndex}`} className="category-title">{category.title}</h2>
+            <p className="category-description">{category.description}</p>
+            <div className="blog-posts">
+              {category.posts.map((post, postIndex) => {
+                const key = `${categoryIndex}-${postIndex}`;
+                const isExpanded = expandedPosts[key];
+                return (
+                  <article key={postIndex} className="blog-post">
+                    <div className="post-image-wrapper">
+                      <img src={post.image} alt={post.title} className="post-image" />
+                    </div>
+                    <div className="post-content">
+                      <h3>{post.title}</h3>
+                      <p>{isExpanded ? post.fullDescription : post.description}</p>
+                      <button className="read-more-button" onClick={() => toggleReadMore(categoryIndex, postIndex)}>
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </main>
+
+      <aside className="help-section" aria-labelledby="help-heading">
+        <div className="help-header">
+          <h2 id="help-heading">Need Help with Digital Marketing?</h2>
+          <p className="help-description">Boost your online presence with our expert digital marketing strategies.</p>
+          <Link to="/contact">
+            <button className="help-button">Reach Out</button>
+          </Link>
+        </div>
+      </aside>
+
       <Footer />
     </div>
   );

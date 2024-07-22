@@ -2,24 +2,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px; /* Adjust padding to move items farther from the edges */
+  padding: 20px 40px;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
 }
+
 .navbar-logo {
-  width: 50px; /* Adjust size as needed */
+  width: 50px;
   height: auto;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between logo and brand name */
+  gap: 10px;
 }
 
 .navbar-logo {
-  width: 30px; /* Adjust the size of the logo as needed */
-  height: 30px;
+  width: 27.5px;
+  height: 27.5px;
 }
 
 .brand-name {
@@ -44,6 +45,29 @@
   text-decoration: none;
   color: #000;
   font-weight: 500;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.language-icon {
+  font-size: 1.2em;
+  margin-right: 2.5px;
+  color: #000;
 }
 
 .contact-button {

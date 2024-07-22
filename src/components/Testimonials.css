@@ -13,13 +13,20 @@
   color: #333;
 }
 
+.testimonials p.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
 .testimonial-cards {
   display: flex;
   justify-content: space-around;
   gap: 20px;
 }
 
-.card {
+.test-card {
+  border: 1px solid #dddddd;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
@@ -29,7 +36,7 @@
 }
 
 .stars {
-  color: #333; /* Change to the desired color */
+  color: gold;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
@@ -40,10 +47,22 @@
   color: #555;
 }
 
-.card span {
+.reviewer {
+  display: flex;
+  align-items: center;
+}
+
+.reviewer img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.reviewer span {
   font-size: 0.9em;
   font-weight: 500;
-  color: #007bff;
+  color: #555;
 }
 
 .analysis-button {
