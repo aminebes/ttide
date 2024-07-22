@@ -28,9 +28,9 @@ function Footer() {
           </div>
           <div className="col-md-4 text-center">
             <h5>Resources</h5>
-            <p className="resources-item"><a href="/trendtide/contact">Support</a></p>
-            <p className="resources-item"><a href="/trendtide/blog">Blog</a></p>
-            <p className="resources-item"><a href="/trendtide/contact#faq-section">FAQ</a></p>
+            <p className="resources-item"><a href="/ttide/contact">Support</a></p>
+            <p className="resources-item"><a href="/ttide/blog">Blog</a></p>
+            <p className="resources-item"><a href="/ttide/contact#faq-section">FAQ</a></p>
           </div>
           <div className="col-md-4 text-center">
             <h5>Connect with Us</h5>

@@ -28,9 +28,9 @@ function FooterFR() {
           </div>
           <div className="col-md-4 text-center">
             <h5>Ressources</h5>
-            <p className="resources-item"><a href="/trendtide/contact/fr">Support</a></p>
-            <p className="resources-item"><a href="/trendtide/blog/fr">Blog</a></p>
-            <p className="resources-item"><a href="/trendtide/contact/fr#faq-section">FAQ</a></p>
+            <p className="resources-item"><a href="/ttide/contact/fr">Support</a></p>
+            <p className="resources-item"><a href="/ttide/blog/fr">Blog</a></p>
+            <p className="resources-item"><a href="/ttide/contact/fr#faq-section">FAQ</a></p>
           </div>
           <div className="col-md-4 text-center">
             <h5>Connectez-vous avec nous</h5>
