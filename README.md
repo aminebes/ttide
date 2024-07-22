@@ -32,6 +32,6 @@ Welcome to TrendTide, the premier platform designed to elevate your digital mark
 
 #### Getting Started
 
-To get started, simply visit our [TrendTide website](https://aminebes.github.io/trendtide) and create an account. From there, you can access all the features and start optimizing your digital marketing strategy.
+To get started, simply visit our [TrendTide website](https://aminebes.github.io/ttide) and create an account. From there, you can access all the features and start optimizing your digital marketing strategy.
 
 Thank you for choosing TrendTide as your digital marketing partner. We're excited to help you achieve your business goals!
