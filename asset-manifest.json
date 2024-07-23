@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ttide/static/css/main.608f4f86.css",
-    "main.js": "/ttide/static/js/main.707c87e6.js",
+    "main.js": "/ttide/static/js/main.0badb17f.js",
     "static/media/contact.jpg": "/ttide/static/media/contact.b454bc798f84a2af5202.jpg",
     "static/media/header.jpg": "/ttide/static/media/header.915d03a1d335d2181326.jpg",
     "static/media/blog-header.jpg": "/ttide/static/media/blog-header.3eaf35c3ea09660d04c9.jpg",
@@ -37,10 +37,10 @@
     "static/media/welness.jpg": "/ttide/static/media/welness.c5fb37196b316bf9edae.jpg",
     "index.html": "/ttide/index.html",
     "main.608f4f86.css.map": "/ttide/static/css/main.608f4f86.css.map",
-    "main.707c87e6.js.map": "/ttide/static/js/main.707c87e6.js.map"
+    "main.0badb17f.js.map": "/ttide/static/js/main.0badb17f.js.map"
   },
   "entrypoints": [
     "static/css/main.608f4f86.css",
-    "static/js/main.707c87e6.js"
+    "static/js/main.0badb17f.js"
   ]
 }
