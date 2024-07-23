@@ -2,6 +2,7 @@ import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-sv
 import { faEnvelope, faMapMarkerAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -28,9 +29,15 @@ function Footer() {
           </div>
           <div className="col-md-4 text-center">
             <h5>Resources</h5>
-            <p className="resources-item"><a href="/ttide/contact">Support</a></p>
-            <p className="resources-item"><a href="/ttide/blog">Blog</a></p>
-            <p className="resources-item"><a href="/ttide/contact#faq-section">FAQ</a></p>
+            <Link to="/contact">
+            <p className="resources-item" style={{color: "#282830", fontSize: "1rem",marginRight: "10px", marginBottom:-25}}>Support</p>
+            </Link>
+            <Link to="/blog">
+            <p className="resources-item" style={{color: "#282830", fontSize: "1rem",marginRight: "10px", marginBottom:-25}}>Blog</p>
+            </Link>
+            <Link to="/contact#faq-section">
+            <p className="resources-item" style={{color: "#282830", fontSize: "1rem",marginRight: "10px"}}>FAQ</p>
+            </Link>
           </div>
           <div className="col-md-4 text-center">
             <h5>Connect with Us</h5>
